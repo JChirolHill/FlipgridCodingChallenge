@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+:root {
+    --fg-cc-background-primary: #f6f6f6;
+    --fg-cc-background-secondary: #fff;
+    --fg-cc-highlight: #ff202e; 
+    --fg-cc-shadow-primary: #d4d4d4;
+    --fg-cc-shadow-secondary: #e6e6e6;
+    --fg-cc-border-radius: 0.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: var(--fg-cc-background-primary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+    height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-modal {
+    background-color: var(--fg-cc-background-secondary);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 10px var(--fg-cc-shadow-primary);
 }
 
-.App-link {
-  color: #61dafb;
+.fg-cc-border {
+    border-radius: var(--fg-cc-border-radius);
+    border: 2px solid var(--fg-cc-shadow-secondary);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-fg {
+    border: none;
+    background-color: var(--fg-cc-highlight);
+    border-radius: var(--fg-cc-border-radius);
+    color: var(--fg-cc-background-secondary);
+    padding: 0.5rem 1.25rem;
+}
+
+.fg-form-control:focus {
+    border: 2px solid var(--fg-cc-shadow-secondary);
+    box-shadow: none;
 }
