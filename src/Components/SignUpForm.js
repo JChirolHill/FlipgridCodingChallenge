@@ -1,4 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+
 export default function SignUpForm() {
+    const navigate = useNavigate();
+
+    const handleSignUp = (event) => {
+        event.preventDefault();
+        navigate('/welcome');
+    }
+
     return (
         <form className="form">
             <div className="form-group">
@@ -17,7 +26,7 @@ export default function SignUpForm() {
             </div>
 
             <div className="text-right">
-                <button className="btn btn-fg font-weight-bold">Sign Up</button>
+                <button className="btn btn-fg font-weight-bold" onClick={handleSignUp}>Sign Up</button>
             </div>
         </form>
     );
