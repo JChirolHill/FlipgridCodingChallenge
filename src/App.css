@@ -39,3 +39,7 @@ body {
     border: 2px solid var(--fg-cc-shadow-secondary);
     box-shadow: none;
 }
+
+.fg-form-control-error {
+    border: 2px solid var(--fg-cc-highlight);
+}

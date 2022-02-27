@@ -1,5 +1,5 @@
 export default function PageNotFound() {
     return (
-        <h1>Page not found, please check your URL.</h1>
+        <h1>Page not found.</h1>
     );
 }

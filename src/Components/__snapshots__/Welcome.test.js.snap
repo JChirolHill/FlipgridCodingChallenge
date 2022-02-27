@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="email"
+  >
+    hello@flipgrid.com
+  </div>
+  <div
+    class="text-right"
+  >
+    <button
+      class="btn btn-fg font-weight-bold"
+      type="button"
+    >
+      Sign In
+    </button>
+  </div>
+</DocumentFragment>
+`;
