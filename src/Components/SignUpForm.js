@@ -59,7 +59,7 @@ export default function SignUpForm(props) {
                 }
                 break;
             case 'form-email':
-                if (value === '' || value.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) {
+                if (value === '' || value.match(/^\S+@\S+\.\S+$/)) {
                     setEmailValid(true);
                     setErrorEmail('');
                 }
@@ -99,6 +99,7 @@ export default function SignUpForm(props) {
                     type="text" 
                     id="form-fName" 
                     className={`form-control fg-form-control ${nameValid || "fg-form-control-error"} fg-cc-border`} 
+                    pattern="\w{2,}"
                     value={userName} 
                     onChange={handleChangeUserName}
                     onBlur={validate}
@@ -112,6 +113,7 @@ export default function SignUpForm(props) {
                     type="email" 
                     id="form-email" 
                     className={`form-control fg-form-control ${emailValid || "fg-form-control-error"} fg-cc-border`} 
+                    pattern="^\S+@\S+\.\S+$"
                     value={userEmail} 
                     onChange={handleChangeUserEmail} 
                     onBlur={validate}
@@ -125,14 +127,28 @@ export default function SignUpForm(props) {
                     type="password" 
                     id="form-password" 
                     className={`form-control fg-form-control ${passwordValid || "fg-form-control-error"} fg-cc-border`} 
+                    pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{6,}$"
                     value={userPassword} 
                     onChange={handleChangeUserPassword} 
                     onBlur={validate}
                     required/>
-                <small className={passwordLengthValid ? "text-success" : "text-danger"}>{passwordLengthValid ? '✔' : '✘'} At least 6 characters.</small><br/>
-                <small className={passwordUppercaseValid ? "text-success" : "text-danger"}>{passwordUppercaseValid ? '✔' : '✘'} At least 1 uppercase letter.</small><br/>
-                <small className={passwordLowercaseValid ? "text-success" : "text-danger"}>{passwordLowercaseValid ? '✔' : '✘'} At least 1 lowercase letter.</small><br/>
-                <small className={passwordSpecialValid ? "text-success" : "text-danger"}>{passwordSpecialValid ? '✔' : '✘'} At least 1 special character.</small><br/>
+                { userPassword.length > 0 && 
+                    <>
+                        <small className={userPassword.length > 0 && (passwordLengthValid ? "text-success" : "text-danger")}>
+                            {passwordLengthValid ? '✔' : '✘'} At least 6 characters.
+                        </small><br/>
+                        <small className={userPassword.length > 0 && (passwordUppercaseValid ? "text-success" : "text-danger")}>
+                            {passwordUppercaseValid ? '✔' : '✘'} At least 1 uppercase letter.
+                        </small><br/>
+                        <small className={userPassword.length > 0 && (passwordLowercaseValid ? "text-success" : "text-danger")}>
+                            {passwordLowercaseValid ? '✔' : '✘'} At least 1 lowercase letter.
+                        </small><br/>
+                        <small className={userPassword.length > 0 && (passwordSpecialValid ? "text-success" : "text-danger")}>
+                            {passwordSpecialValid ? '✔' : '✘'} At least 1 special character.
+                        </small><br/>
+                    </>
+                }
+                
             </div>
 
             <div className="text-right">

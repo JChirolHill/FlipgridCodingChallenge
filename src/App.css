@@ -1,7 +1,8 @@
 :root {
     --fg-cc-background-primary: #f6f6f6;
     --fg-cc-background-secondary: #fff;
-    --fg-cc-highlight: #ff202e; 
+    --fg-cc-highlight-primary: #ff202e; 
+    --fg-cc-highlight-secondary: #9999ff;
     --fg-cc-shadow-primary: #d4d4d4;
     --fg-cc-shadow-secondary: #e6e6e6;
     --fg-cc-border-radius: 0.5rem;
@@ -29,17 +30,28 @@ body {
 
 .btn-fg {
     border: none;
-    background-color: var(--fg-cc-highlight);
+    background-color: var(--fg-cc-highlight-primary);
     border-radius: var(--fg-cc-border-radius);
     color: var(--fg-cc-background-secondary);
     padding: 0.5rem 1.25rem;
+    transition: all 0.1s;
+}
+
+.btn-fg:active {
+    background-color: var(--fg-cc-highlight-secondary);
+    transform: scale(0.8, 0.8);
+    border-radius: 50%;
+}
+
+.btn-fg:focus {
+    box-shadow: 0 0 0 0.1rem #9999ff5f;
 }
 
 .fg-form-control:focus {
-    border: 2px solid var(--fg-cc-shadow-secondary);
-    box-shadow: none;
+    border: 2px solid #9999ff5f;
+    box-shadow: 0 0 0 0.1rem #9999ff5f;
 }
 
 .fg-form-control-error {
-    border: 2px solid var(--fg-cc-highlight);
+    border: 2px solid var(--fg-cc-highlight-primary);
 }
