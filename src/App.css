@@ -28,25 +28,6 @@ body {
     border: 2px solid var(--fg-cc-shadow-secondary);
 }
 
-.btn-fg {
-    border: none;
-    background-color: var(--fg-cc-highlight-primary);
-    border-radius: var(--fg-cc-border-radius);
-    color: var(--fg-cc-background-secondary);
-    padding: 0.5rem 1.25rem;
-    transition: all 0.1s;
-}
-
-.btn-fg:active {
-    background-color: var(--fg-cc-highlight-secondary);
-    transform: scale(0.8, 0.8);
-    border-radius: 50%;
-}
-
-.btn-fg:focus {
-    box-shadow: 0 0 0 0.1rem #9999ff5f;
-}
-
 .fg-form-control:focus {
     border: 2px solid #9999ff5f;
     box-shadow: 0 0 0 0.1rem #9999ff5f;
@@ -55,3 +36,81 @@ body {
 .fg-form-control-error {
     border: 2px solid var(--fg-cc-highlight-primary);
 }
+
+/* Flipgrid button */
+
+.fg-btn button {    
+    background-color: #ff202e;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    padding: .5rem 1.25rem;
+    transition: all 0.1s;
+    position: relative;
+}
+
+.fg-btn {
+  position: relative;
+  display: inline-block;
+}
+
+.fg-btn .fg-dot {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.fg-dot {
+  width: 2rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  transition: all 0.1s;
+}
+
+.fg-dot-1 {
+  background-color: #F35123;
+  transform: rotate(45deg);
+}
+
+.fg-dot-2 {
+  background-color: #02A4EF;
+  transform: rotate(-45deg);
+}
+
+.fg-dot-3 {
+  background-color: #F003E7;
+  transform: rotate(45deg);
+}
+
+.fg-dot-4 {
+  background-color: #FFB901;
+  transform: rotate(-45deg);
+}
+
+.fg-btn:active button {
+    background-color: #03F01A;
+    border-radius: 50%;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.4, 0.7);
+}
+
+.fg-btn:active .fg-dot-1 {
+  transform: scale(1.2) rotate(55deg) translateX(-2px);
+}
+
+.fg-btn:active .fg-dot-2 {
+  transform: scale(1.2) rotate(-25deg) translateX(4px);
+}
+
+.fg-btn:active .fg-dot-3 {
+  transform: scale(1.2) rotate(55deg) translateX(2px);
+}
+
+.fg-btn:active .fg-dot-4 {
+  transform: scale(1.2) rotate(-25deg) translateX(-4px);
+}
+
+/* End flipgrid button */

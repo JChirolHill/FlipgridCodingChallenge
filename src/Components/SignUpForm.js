@@ -152,7 +152,13 @@ export default function SignUpForm(props) {
             </div>
 
             <div className="text-right">
-                <button type="submit" className="btn btn-fg font-weight-bold">Sign Up</button>
+                <span className="fg-btn">
+                    <div className="fg-dot fg-dot-1"></div>
+                    <div className="fg-dot fg-dot-2"></div>
+                    <div className="fg-dot fg-dot-3"></div>
+                    <div className="fg-dot fg-dot-4"></div>
+                    <button type="submit" className="btn font-weight-bold">Sign Up</button>
+                </span>
             </div>
         </form>
     );
