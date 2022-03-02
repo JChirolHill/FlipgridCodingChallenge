@@ -39,7 +39,16 @@ body {
 
 /* Flipgrid button */
 
-.fg-btn button {    
+button {
+    background-color: #00000000;
+    border: none;
+}
+
+button:active, button:focus {
+    outline: none;
+}
+
+.fg-btn .btn {    
     background-color: #ff202e;
     border: none;
     border-radius: 0.5rem;
@@ -90,7 +99,7 @@ body {
   transform: rotate(-45deg);
 }
 
-.fg-btn:active button {
+.fg-btn:active .btn {
     background-color: #03F01A;
     border-radius: 50%;
     -webkit-transform: scale(0.8);

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import FlipgridButton from "./FlipgridButton";
 
 export default function SignUpForm(props) {
     const navigate = useNavigate();
@@ -49,7 +50,7 @@ export default function SignUpForm(props) {
 
         switch (id) {
             case 'form-fName':
-                if (value === '' || value.match(/\w{2,}/)) {
+                if (value === '' || value.match(/\S{2,}/)) {
                     setNameValid(true);
                     setErrorName('');
                 }
@@ -92,14 +93,14 @@ export default function SignUpForm(props) {
     }
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label htmlFor="form-fName" className="font-weight-bold">First Name</label>
                 <input 
                     type="text" 
                     id="form-fName" 
                     className={`form-control fg-form-control ${nameValid || "fg-form-control-error"} fg-cc-border`} 
-                    pattern="\w{2,}"
+                    pattern="\S{2,}"
                     value={userName} 
                     onChange={handleChangeUserName}
                     onBlur={validate}
@@ -151,15 +152,7 @@ export default function SignUpForm(props) {
                 
             </div>
 
-            <div className="text-right">
-                <span className="fg-btn">
-                    <div className="fg-dot fg-dot-1"></div>
-                    <div className="fg-dot fg-dot-2"></div>
-                    <div className="fg-dot fg-dot-3"></div>
-                    <div className="fg-dot fg-dot-4"></div>
-                    <button type="submit" className="btn font-weight-bold">Sign Up</button>
-                </span>
-            </div>
+            <FlipgridButton/>
         </form>
     );
 }
