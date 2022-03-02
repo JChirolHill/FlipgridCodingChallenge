@@ -3,7 +3,7 @@
 
 Implemented a simple sign up form in React for an imaginary service.  Performs validation on all fields:
 * Username: at least two characters
-* Email: <non-whitespace-character>@<non-whitespace-character>.<non-whitespace-character>
+* Email: `<non-whitespace-character>@<non-whitespace-character>.<non-whitespace-character>`
 * Password: 
     * At least 6 characters
     * At least 1 uppercase letter
@@ -16,6 +16,7 @@ Once all fields have valid entries, clicking the Sign Up button redirects to a w
 
 You can find the built React code hosted on:
 https://flipgrid-coding-challenge-jchirolhill.surge.sh/
+
 Or clone the repo and run locally with:
 ```
 git clone https://github.com/JChirolHill/FlipgridCodingChallenge-React.git
